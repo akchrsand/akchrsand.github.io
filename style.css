@@ -1,0 +1,67 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.parisienne-regular {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 30px; /* Increased font size for better readability */
+    background-color: #ff647f; /* Soft pink color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Rounded edges */
+    font-family: 'Parisienne', cursive; /* Use the imported cursive font */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for interaction */
+}
+
+button:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly shrink button on click */
+}
+
+body, a:hover, button {
+    cursor: url('cursor.png'), auto;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.heart {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: #ff647f;
+    opacity: 0;
+    transform: scale(0);
+    clip-path: polygon(51% 13%, 80% 0, 100% 18%, 91% 63%, 51% 99%, 10% 64%, 0 21%, 20% 0); 
+    animation: pop 0.75s ease-out forwards;
+}
